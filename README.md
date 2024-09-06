@@ -46,10 +46,11 @@ consists of a network of interconnected rooms, like this:
 [Room 3]----[Room 4]
 ```
 
-In our maze/cave, there exists an Adventurer and a Creature. Both have the following qualities:
+In our maze/cave, there exists an Adventurer and a Creature. These should be randomly
+placed in one of the rooms. Both characters should have the following qualities:
 
-Name: set at construction
-Health: 5
+* Name: set at construction
+* Health: 5
 
 You are free to add other fields as you see fit to implement the assignment. Use inheritance to 
 keep things DRY.
@@ -57,6 +58,11 @@ keep things DRY.
 A room might contain an alive Creature and/or an alive Adventurer. 
 Assign each to a random room when the maze/cave is constructed. 
 Play proceeds like this:
+
+1. If the Adventurer and the Creature are in the same room, they fight.
+2. If they are not in the same room, the Adventurer moves to a random neighboring room.
+3. That is it for each turn.
+4. The game ends when either the Adventurer or the Creature dies.
 
 For each room, if the room contains both the Adventurer and the Creature, then they fight.
 If the room only contains the Adventurer they move to a random neighboring room.
@@ -71,6 +77,9 @@ A “fight” occurs like this:
 
 The game proceeds through multiple turns until either the Adventurer or the Creature wins. 
 They win by killing the other. A character dies when their health drops to zero or below.
+
+Hence, if the Adventurer and the Creature are in the same room, they will fight each 
+subsequent turn until one of them dies.
 
 When the game is run, it should print out the state of Polymorphia after every turn. 
 It should look something like this:
@@ -112,7 +121,7 @@ Southeast:
 Boo, the Creature won!
 ```
 
-You should probably have, at the minimum, the following classes (you can use these names or your own names):
+Some of the classes you *might* create are the following (you can use these names or your own names):
 
 - Polymorphia
 - Maze/Cave
@@ -143,10 +152,10 @@ and any other comments on the work – including documenting any assumptions or 
 Only one URL submission is required per team.
 
 ## Rubric
-- 10 points for readable OO style code: Code should be commented if necessary, but self-documenting names are preferred.  Include citations (URLs) of any code from external sources. Concentrate on writing cohesive code with minimal coupling.
-- 10 points for correctly structured output: Submit the output generated from running your game. Indicate which test was run to produce this output.
 - 5 points for the README file: A README file with names of the team members, the Java version, and any other comments about your implementation or assumptions should be present in the GitHub repo.  
-- 10 points for the required tests. If possible (easy, if you use IntelliJ) include a screenshot of your code coverage. It should look something like this:
+- 15 points for readable OO style code: Code should be commented if necessary, but self-documenting names are preferred.  Include citations (URLs) of any code from external sources. Concentrate on writing cohesive code with minimal coupling.
+- 15 points for correctly structured output: Submit the output generated from running your game. Indicate which test was run to produce this output.
+- 15 points for the required tests. If possible (easy, if you use IntelliJ) include a screenshot of your code coverage. It should look something like this:
 
 ## Github Guidelines
 All code submissions for this course will be managed through GitHub Classroom. Kindly generate the GitHub repository for Homework 2 by following this link: [https://classroom.github.com/a/oDfMNF9D](https://classroom.github.com/a/oDfMNF9D)
