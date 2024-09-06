@@ -149,7 +149,8 @@ Only one URL submission is required per team.
 - 10 points for the required tests. If possible (easy, if you use IntelliJ) include a screenshot of your code coverage. It should look something like this:
 
 ## Github Guidelines
-All code submissions for this course will be managed through GitHub Classroom. Kindly generate the GitHub repository for Homework 2 by following this link: https://classroom.github.com/a/mnIIlkUl
+All code submissions for this course will be managed through GitHub Classroom. Kindly generate the GitHub repository for Homework 2 by following this link: [https://classroom.github.com/a/oDfMNF9D](https://classroom.github.com/a/oDfMNF9D)
+
 Since Homework 2 is a team assignment, only one repository submission is required per team. Hence, please do the following:
 
 * TEAM-MEMBER-1 generates the repository.
