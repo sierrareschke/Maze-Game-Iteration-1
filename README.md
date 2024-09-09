@@ -10,7 +10,7 @@ a team in a Test-Driven manner.
 
 Put all team members' names here:
 
-    Name: Your Names Here
+    Name: Sierra Reschke and Grace Ohlsen
 
 For all code submissions, the following will be required:
 
