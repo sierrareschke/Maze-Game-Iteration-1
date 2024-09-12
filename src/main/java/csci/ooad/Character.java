@@ -1,11 +1,10 @@
+package csci.ooad;
+
 public class Character {
 
     // fields
     private String name;
     private int health;
-    // TODO: added a field to have each character store their current room
-    private
-
 
     // constructor
     Character(String name) {
@@ -57,6 +56,5 @@ public class Character {
     public String toString() {
         return name + "(health: " + health + ")";
     }
-
 
 }
