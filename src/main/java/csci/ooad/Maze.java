@@ -7,13 +7,14 @@ import java.util.Scanner;
 
 public class Maze {
 
-    // fields
-    // TODO - not sure if this is how we want to initialize rooms (above) (aka as static final vs in constructor)
-    private int turnCount;
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
+
+    // fields
+    private int turnCount;
     private Creature creature;
     private Adventurer adventurer;
     private Room [] rooms;
+    private Dice dice;
 
 
     // constructor
@@ -27,6 +28,11 @@ public class Maze {
     }
 
     // methods
+
+
+    public Room[] getRooms() {
+        return rooms;
+    }
 
     /**
      * createRooms: creates 4 rooms (NW, NE, SE, SW)
@@ -87,6 +93,11 @@ public class Maze {
         // Print the initial state of the game (optional)
         System.out.println("\nInitial game state:");
 
+        for (Room room : rooms) {
+            System.out.println(room.toString());
+        }
+
+
         // continue taking turns until one of the character's health = 0
         System.out.println("Game is ready. Adventurer and creature are placed in rooms.");
         System.out.println("Exited beginGame method.");
@@ -97,8 +108,8 @@ public class Maze {
      * and calls the fight method if they are in the same room. Otherwise moves the adventurer to a random neighboring room
      * Increments turnCount
      */
-    public void takeTurn() {
-
+//    public void takeTurn() {
+//
 //        turnCount++; // increment turn count
 //        printMaze();  // Print current state of the maze
 //
@@ -108,7 +119,7 @@ public class Maze {
 //        } else { // if both players are not in the same room, move adventurer to a random neighboring room
 //            moveAdventurer();  // Move adventurer to a neighboring room
 //        }
-    }
+//    }
 
 
     /**
@@ -130,27 +141,27 @@ public class Maze {
      * fight: calls Character.rollDie() for Creature and Adventurer. Character with lower roll takes damage
      * equal to the difference in the rolls.
      */
-//    public void fight() {
-//        System.out.println("The adventurer and the creature are in the same room! A fight breaks out!");
-//
-//        // adventurer and creature both roll a die
-//        int adventurerRoll = adventurer.rollDie();
-//        int creatureRoll = creature.rollDie();
-//
-//        // compare the rolls, character with lower roll will take damage equal to the difference between the rolls
-//        // if both rolls are the same, neither character takes damage
-//        if (adventurerRoll == creatureRoll) { // if both rolls are the same, nothing happens
-//            System.out.println("Fight is a tie! No damage to either player this turn.");
-//        } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
-//            int damage = adventurerRoll - creatureRoll;
-//            creature.subtractFromHealth(-damage);  // take damage (as a negative number)
-//            System.out.println("Adventurer wins the round. Creature takes " + damage + " .");
-//        } else { // creature wins, subtract the difference from the adventurer's health
-//            int damage = creatureRoll - adventurerRoll;
-//            adventurer.subtractFromHealth(-damage);  // take damage (as a negative number)
-//            System.out.println("Creature wins the round. Adventurer takes " + damage + " .");
-//        }
-//    }
+    public void fight() {
+        System.out.println("The adventurer and the creature are in the same room! A fight breaks out!");
+
+        // adventurer and creature both roll a die
+        int adventurerRoll = adventurer.rollDie();
+        int creatureRoll = creature.rollDie();
+
+        // compare the rolls, character with lower roll will take damage equal to the difference between the rolls
+        // if both rolls are the same, neither character takes damage
+        if (adventurerRoll == creatureRoll) { // if both rolls are the same, nothing happens
+            System.out.println("Fight is a tie! No damage to either player this turn.");
+        } else if (adventurerRoll > creatureRoll) { // adventurer wins, subtract the difference from the creature's health
+            int damage = adventurerRoll - creatureRoll;
+            creature.subtractFromHealth(-damage);  // take damage (as a negative number)
+            System.out.println("Adventurer wins the round. Creature takes " + damage + " .");
+        } else { // creature wins, subtract the difference from the adventurer's health
+            int damage = creatureRoll - adventurerRoll;
+            adventurer.subtractFromHealth(-damage);  // take damage (as a negative number)
+            System.out.println("Creature wins the round. Adventurer takes " + damage + " .");
+        }
+    }
 
 
 }

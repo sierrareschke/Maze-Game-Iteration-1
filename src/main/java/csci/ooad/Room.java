@@ -75,4 +75,23 @@ public class Room {
         // Return the removed adventurer
         return occupant;
     }
+
+    @Override
+    public String toString() {
+        String result = name + ":\n";
+
+        // If the room is empty
+        if (occupants.length == 0) {
+            result += "No occupants are here.";
+        } else {
+            // Add information about each occupant
+            for (Character occupant : occupants) {
+                String occupantType = (occupant instanceof Adventurer) ? "Adventurer" : "Creature";
+                result += occupantType + " " + occupant + " is here.\n";
+            }
+        }
+
+        return result;
+    }
+
 }
