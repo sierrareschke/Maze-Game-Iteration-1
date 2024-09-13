@@ -6,38 +6,67 @@ public class Room {
     private Character [] occupants;
     private int index;
 
-    // Default constructor
+
+    /**
+     * Default constructor, initializes name, occupants, and index to default values
+     */
     public Room() {
         this.name = "";
-        this.occupants = new Character[0]; // Initializes with an empty a
+        this.occupants = new Character[0]; // Initializes with an empty array
         this.index = -1;//
     }
 
-    // Constructor with name
+
+    /**
+     * Room constructor with a room name. Initializes the room name to name and
+     * occupants and room index to default values
+     * @param name - name of Room
+     */
     public Room(String name){
         this.name = name;
         this.occupants = new Character[0]; // Initializes with an empty a
         this.index = -1;
     }
 
-    // Constructor with name and index
+    /**
+     * Room constructor with name and index to initialize, also initializes an empty array for occupants
+     * @param name - name of Room
+     * @param index - index of Room
+     */
     public Room(String name,int index) {
         this.name = name;
         this.occupants = new Character[0]; // Initialize with an empty array
         this.index = index;
     }
 
+    /**
+     * Accessor method to get the name of the Room
+     * @return name of Room
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     * Accessor method to get the Room's index
+     * @return index of Room
+     */
     public int getIndex() {return index;}
 
-    // Getter for occupants
+
+    /**
+     * Getter method for Room's occupants
+     * @return array of the Characters in the room
+     */
     public Character[] getOccupants() {
         return occupants;
     }
 
-    // Add character to occupants
+
+    /**
+     * Method to add a Character to a room as an occupant
+     * @param occupant - Character object to add to the room
+     */
     public void addOccupant(Character occupant) {
         // Create a new array with one more space than the current occupants array
         Character[] newOccupants = new Character[occupants.length + 1];
@@ -54,9 +83,14 @@ public class Room {
         this.occupants = newOccupants;
     }
 
-    // Remove adventurer from occupants
+
+    /**
+     * Method to remove an Adventurer occupant from a Room
+     * @param occupant - Adventurer to remove from Room
+     * @return the Adventurer that was removed
+     */
     public Adventurer removeAdventurer(Adventurer occupant) {
-        // Check if the occupant is in the room
+        // Check if the occupant is in the room by checking list of occupants
         boolean found = false;
         for (Character character : occupants) {
             if (character instanceof Adventurer && character.equals(occupant)) {
@@ -87,6 +121,13 @@ public class Room {
         return occupant;
     }
 
+    /**
+     * toString method of the Room to print out its occupants
+     * @return String version of the room
+     *
+     * Ex. "Northwest: No occupants are here."
+     * Ex. "Southeast: Adventurer testAdventurer is here."
+     */
     @Override
     public String toString() {
         String result = name + ":\n";

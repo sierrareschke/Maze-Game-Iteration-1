@@ -1,14 +1,11 @@
 package csci.ooad;
 
-
 import java.util.Random;
 import java.util.Scanner;
 
 public class Maze {
 
     private static final String[] CREATURE_TYPES = {"Ogre", "Goblin", "Troll", "Werewolf", "Vampire", "Gnome", "Zombie"};
-
-    // fields
     private int turnCount;
     private Creature creature;
     private Adventurer adventurer;
@@ -16,8 +13,6 @@ public class Maze {
     private Dice dice;
     private Character winner;
 
-
-    // constructor
 
     /**
      * Constructor to create the maze with 4 rooms and set turn count to 0
@@ -27,15 +22,12 @@ public class Maze {
         createRooms();
         dice = new Dice();
         winner = null;
-
-
-
-
     }
 
-    // methods
-
-
+    /**
+     * Accessor method to get the list of rooms in the maze
+     * @return Room[] - array of rooms
+     */
     public Room[] getRooms() {
         return rooms;
     }
@@ -92,12 +84,11 @@ public class Maze {
         System.out.println("Adventurer placed in: " + rooms[randomRoomIndexForAdventurer].getName());
         System.out.println("Creature placed in: " + rooms[randomRoomIndexForCreature].getName());
 
-        // Print the initial state of the game (optional)
+        // Print the initial state of the game
         System.out.println("\nInitial game state:");
-
         printMaze();
 
-
+        // begin taking turns
         // continue taking turns until one of the character's health = 0
         System.out.println("\nGame is ready. Adventurer and creature are placed in rooms.");
         System.out.println("Starting turns.");
@@ -107,21 +98,21 @@ public class Maze {
             takeTurn(adventurer, creature);
         }
 
-        // getting here means one of the characters has died --> end game
-        // get which creature died and print that out
-        // TODO add check for which score is higher if both below 0?? no winner??
+        // getting here means one (or both) of the characters has died --> end game
+        // nobody wins if both creature and adventurer's health is <= 0
         if (creature.getHealth() <= 0 && adventurer.getHealth() <= 0) {
-            System.out.println("Both players die. Game over.\n");
+            System.out.println("Both players die. Nobody wins. Game over.\n");
         }
+        // otherwise, the creature wins if the adventurer's health is <= 0
         else if (adventurer.getHealth() <= 0) {
             winner = creature;
             System.out.println("Boo, the creature won. Game over.\n");
         }
+        // if the creature's health is <= 0, the adventurer wins
         else {
             winner = adventurer;
             System.out.println("Adventurer " + adventurerName + " has defeated the creature! Game over");
         }
-        // System.out.println("A character has died. Game over.\n");
 
         System.out.println("Exited beginGame method.\n");
 
@@ -129,7 +120,7 @@ public class Maze {
 
     /**
      * takeTurn: Prints maze and turn number. Analyzes the room locations of the creature and adventurer
-     * and calls the fight method if they are in the same room. Otherwise moves the adventurer to a random neighboring room
+     * and calls the fight method if they are in the same room. Otherwise, moves the adventurer to a random neighboring room
      * Increments turnCount
      */
     public void takeTurn(Adventurer adventurer, Creature creature) {
@@ -139,7 +130,7 @@ public class Maze {
 
         // if both players are in the same room, call fight method
         if (areBothInSameRoom(adventurer, creature)) {
-            fight(adventurer, creature);
+            fight(adventurer, creature); // players fight
             // both characters lose 0.5 points, regardless of fight outcome
             System.out.println("Both players lose 0.5 health after fight.");
             adventurer.subtractFromHealth(-0.5);
@@ -158,7 +149,7 @@ public class Maze {
      * areBothInSameRoom: method to check if both adventurer and creature are in the same room
      * @return true if adventurer and creature are in same room
      */
-    private boolean areBothInSameRoom(Adventurer adventurer, Creature creature) {
+    public boolean areBothInSameRoom(Adventurer adventurer, Creature creature) {
         Room adventurerRoom = null;
         Room creatureRoom = null;
 
@@ -198,7 +189,7 @@ public class Maze {
             System.out.println("Polymorphia MAZE: turn " + turnCount);
         }
         for (Room room : rooms) {
-            System.out.println(room.toString());
+            System.out.println(room.toString()); // print out each room and its occupants
         }
     }
 
@@ -259,21 +250,29 @@ public class Maze {
     }
 
 
+    /**
+     * method to return the winner of the game
+     * @return winner of game
+     */
     public Character getWinner() {
         return winner;
     }
 
 
+    /**
+     * Method to find which room a character is in
+     * @param character to find which room in
+     * @return Room that the character is in
+     */
     private Room getRoomOfCharacter(Character character) {
         for (Room room : rooms) {
             for (Character occupant : room.getOccupants()) {
                 if (occupant.equals(character)) {
-                    return room;
+                    return room; // character is an occupant in this room
                 }
             }
         }
         return null; // Character not found in any room
     }
-
 
 }

@@ -20,6 +20,12 @@ public class CharacterTest {
         assertEquals(5.0, character.getHealth(), "Initial health should be 5.0");
     }
 
+    // Test the name access method
+    @Test
+    public void testGetName() {
+        assertEquals("TestCharacter", character.getName(), "Character name should be TestCharacter");
+    }
+
     // Test subtractFromHealth with a negative value
     @Test
     public void testSubtractFromHealthValid() {

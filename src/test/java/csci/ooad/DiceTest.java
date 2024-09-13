@@ -8,6 +8,10 @@ import java.util.Map;
 
 public class DiceTest {
 
+    /**
+     * Tester method to test that the rollDice method returns only integers 1-6
+     * and that each number is rolled at least once and with a random distribution
+     */
     @Test
     public void testDiceRoll() {
         // create Dice object
