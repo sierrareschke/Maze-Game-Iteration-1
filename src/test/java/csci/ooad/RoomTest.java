@@ -22,8 +22,9 @@ public class RoomTest {
 
     // test if occupants are correctly added to the room array
     @Test
-    public void testAddOccupant(Adventurer testAdventurer) {
-        room.addOccupant(adventurer);
+    public void testAddOccupant() {
+        Room room = new Room();
+        room.addOccupant(adventurer);  // TODO why could this be null?
         assertEquals(1, room.getOccupants().length, "Room should have 1 occupant after adding an adventurer.");
 
         room.addOccupant(creature);

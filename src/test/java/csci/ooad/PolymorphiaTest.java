@@ -110,21 +110,21 @@ public class PolymorphiaTest {
         System.setIn(System.in);
     }
 
-    // call the test class for Dice
-    @Test
-    public void testDice() {
-        DiceTest diceTest = new DiceTest();
-        diceTest.testDiceRoll(); // call testDiceRoll method from DiceTest
-    }
-
-    // call the test class for Room
-    @Test
-    public void testRoom() {
-        RoomTest roomTest = new RoomTest();
-        // call all methods in DiceTestClass
-        Adventurer testAdventurer = new Adventurer("Test Adventurer");
-        roomTest.testAddOccupant(testAdventurer);
-        roomTest.testRemoveAdventurer();
-        roomTest.testToString();
-    }
+//    // call the test class for Dice
+//    @Test
+//    public void testDice() {
+//        DiceTest diceTest = new DiceTest();
+//        diceTest.testDiceRoll(); // call testDiceRoll method from DiceTest
+//    }
+//
+//    // call the test class for Room
+//    @Test
+//    public void testRoom() {
+//        RoomTest roomTest = new RoomTest();
+//        // call all methods in DiceTestClass
+//        Adventurer testAdventurer = new Adventurer("Test Adventurer");
+//        roomTest.testAddOccupant();
+//        roomTest.testRemoveAdventurer();
+//        roomTest.testToString();
+//    }
 }
