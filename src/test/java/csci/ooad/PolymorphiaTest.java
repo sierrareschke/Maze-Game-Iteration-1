@@ -41,6 +41,12 @@ public class PolymorphiaTest {
             creatureRoomDistribution.put(room, 0);
         }
 
+        // Track the number of times each character wins
+        Map<String, Integer> winDistribution = new HashMap<>();
+
+        winDistribution.put("Adventurer", 0);
+        winDistribution.put("Creature", 0);
+
         // Run the game 100 times
         for (int i = 0; i < 100; i++) {
             // Simulate input for the Scanner (adventurer name)
@@ -64,6 +70,15 @@ public class PolymorphiaTest {
                     }
                 }
             }
+
+            // count the number of times the adventurer and creature win
+            if (maze.getWinner() instanceof Adventurer) {
+                winDistribution.put("Adventurer", winDistribution.get("Adventurer") +1);
+
+            } else { // creature won
+                winDistribution.put("Creature", winDistribution.get("Creature") +1);
+            }
+
         }
 
         // Ensure the adventurer and creature are not always placed in the same room
@@ -83,7 +98,33 @@ public class PolymorphiaTest {
             assertTrue(creatureRoomDistribution.get(room) < 100, "Creature should not be placed in " + room + " 100 times.");
         }
 
+
+        // Ensure the adventurer and creature each win at least once
+        // For a random distribution, each character should win at least once
+        System.out.println("Win distribution: " + winDistribution);
+        assertTrue(winDistribution.get("Adventurer") > 0, "Adventurer should win at least once");
+        assertTrue(winDistribution.get("Creature") > 0, "Adventurer should win at least once");
+
+
         // Reset System.in
         System.setIn(System.in);
+    }
+
+    // call the test class for Dice
+    @Test
+    public void testDice() {
+        DiceTest diceTest = new DiceTest();
+        diceTest.testDiceRoll(); // call testDiceRoll method from DiceTest
+    }
+
+    // call the test class for Room
+    @Test
+    public void testRoom() {
+        RoomTest roomTest = new RoomTest();
+        // call all methods in DiceTestClass
+        Adventurer testAdventurer = new Adventurer("Test Adventurer");
+        roomTest.testAddOccupant(testAdventurer);
+        roomTest.testRemoveAdventurer();
+        roomTest.testToString();
     }
 }

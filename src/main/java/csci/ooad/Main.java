@@ -6,5 +6,6 @@ public class Main {
         // Create a new instance of Maze and begin the game
         Maze maze = new Maze();
         maze.beginGame();
+
     }
 }

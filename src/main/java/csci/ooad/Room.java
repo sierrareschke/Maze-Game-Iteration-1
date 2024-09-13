@@ -87,7 +87,7 @@ public class Room {
             // Add information about each occupant
             for (Character occupant : occupants) {
                 String occupantType = (occupant instanceof Adventurer) ? "Adventurer" : "Creature";
-                result += occupantType + " " + occupant + " is here.\n";
+                result += occupantType + " " + occupant + " is here. ";
             }
         }
 

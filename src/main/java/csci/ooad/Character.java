@@ -4,12 +4,15 @@ public class Character {
 
     // fields
     private String name;
-    private int health;
+    private double health;
+    private int roomIndex;
+    private boolean wonGame;
 
     // constructor
     Character(String name) {
         this.name = name;
-        this.health = 5; // initial health set to 5
+        this.health = 5.0; // initial health set to 5.0
+        this.wonGame = false;
     }
 
     // methods
@@ -19,7 +22,7 @@ public class Character {
      *
      * @return health - the Character's current health
      */
-    public int getHealth() {
+    public double getHealth() {
         return this.health;
     }
 
@@ -28,7 +31,7 @@ public class Character {
      *
      * @param numToSubtract
      */
-    public void subtractFromHealth(int numToSubtract) {
+    public void subtractFromHealth(double numToSubtract) {
         // check that numToSubtract is negative
         if (numToSubtract < 0) {
             this.health += numToSubtract; // adding negative number subtracts health
@@ -55,6 +58,31 @@ public class Character {
     @Override
     public String toString() {
         return name + "(health: " + health + ")";
+    }
+
+    /**
+     * Method to get the current room index
+     * @return roomIndex - the index of the room where the character is located
+     */
+    public int getRoomIndex() {
+        return this.roomIndex;
+    }
+
+    /**
+     * Method to update the room index when the character moves to a new room
+     * @param newRoomIndex - the new index of the room
+     */
+    public void updateRoomIndex(int newRoomIndex) {
+        this.roomIndex = newRoomIndex;
+    }
+
+    /**
+     * Method to set player as having won the game
+     * @return true
+     */
+    public boolean setWin() {
+        this.wonGame = true;
+        return this.wonGame;
     }
 
 }
