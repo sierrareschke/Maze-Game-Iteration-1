@@ -1,5 +1,4 @@
-// TODO: imports
-// TODO what happens if both go to zero???
+// TODO what happens if both go to zero??
 package csci.ooad;
 
 
@@ -203,7 +202,6 @@ public class Maze {
      * moveAdventurer: moves the adventurer to a random neighboring room
      * neighboring room = roomIndex +- 1
      * ensure index is in range of rooms array
-     * TODO: remove adventurer from room
      */
     public void moveAdventurer(Adventurer adventurer) {
         // Get the current room index of the adventurer

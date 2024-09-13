@@ -47,7 +47,7 @@ public class RoomTest {
         assertNull(removedAgain, "Removing the same adventurer again should return null.");
     }
 
-    // TODO
+
     @Test
     public void testToString() {
         assertEquals("Test Room:\nNo occupants are here.", room.toString(), "Room should indicate that it is empty.");

@@ -110,6 +110,8 @@ public class PolymorphiaTest {
         System.setIn(System.in);
     }
 
+    // TODO finish creating test class for each src/main class
+    // TODO call all the test classes here or can add up coverages (piazza)
 //    // call the test class for Dice
 //    @Test
 //    public void testDice() {
