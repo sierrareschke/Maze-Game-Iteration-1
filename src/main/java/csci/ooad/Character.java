@@ -5,17 +5,16 @@ public class Character {
     // fields
     private String name;
     private double health;
-    private int roomIndex;
-    private boolean wonGame;
 
     // constructor
     Character(String name) {
         this.name = name;
         this.health = 5.0; // initial health set to 5.0
-        this.wonGame = false;
     }
 
     // methods
+
+    public String getName() {return name;}
 
     /**
      * Method to get current health
@@ -40,15 +39,6 @@ public class Character {
         }
     }
 
-    /**
-     * Method to roll one die and return the value
-     *
-     * @return roll - result of single die rolled
-     */
-    public int rollDie() {
-        int roll = (int) (Math.random() * 6) + 1;
-        return roll; // return roll value
-    }
 
     /**
      * toString method to return Character's name(health: health)
@@ -60,29 +50,6 @@ public class Character {
         return name + "(health: " + health + ")";
     }
 
-    /**
-     * Method to get the current room index
-     * @return roomIndex - the index of the room where the character is located
-     */
-    public int getRoomIndex() {
-        return this.roomIndex;
-    }
 
-    /**
-     * Method to update the room index when the character moves to a new room
-     * @param newRoomIndex - the new index of the room
-     */
-    public void updateRoomIndex(int newRoomIndex) {
-        this.roomIndex = newRoomIndex;
-    }
-
-    /**
-     * Method to set player as having won the game
-     * @return true
-     */
-    public boolean setWin() {
-        this.wonGame = true;
-        return this.wonGame;
-    }
 
 }

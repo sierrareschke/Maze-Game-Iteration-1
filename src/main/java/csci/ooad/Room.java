@@ -4,22 +4,33 @@ public class Room {
 
     private String name;
     private Character [] occupants;
+    private int index;
 
     // Default constructor
     public Room() {
         this.name = "";
-        this.occupants = new Character[0]; // Initializes with an empty array
+        this.occupants = new Character[0]; // Initializes with an empty a
+        this.index = -1;//
     }
 
     // Constructor with name
-    public Room(String name) {
+    public Room(String name){
+        this.name = name;
+        this.occupants = new Character[0]; // Initializes with an empty a
+        this.index = -1;
+    }
+
+    // Constructor with name and index
+    public Room(String name,int index) {
         this.name = name;
         this.occupants = new Character[0]; // Initialize with an empty array
+        this.index = index;
     }
 
     public String getName() {
         return name;
     }
+    public int getIndex() {return index;}
 
     // Getter for occupants
     public Character[] getOccupants() {

@@ -21,17 +21,22 @@ public class DiceTest {
         }
 
         // roll the dice 1000 times
-        int numberOfRolls = 1000;
-        for (int i = 0; i < numberOfRolls; i++) {
+        int NUMBER_OF_ROLLS = 1000;
+        for (int i = 0; i < NUMBER_OF_ROLLS; i++) {
             int rollResult = dice.rollDice();
             // update the HashMap to increment the count for the rolled integer
             rollCounts.put(rollResult, rollCounts.get(rollResult) + 1);
         }
 
-        // check that all numbers 1 to 6 are present and rolled at least a minimum number of times
-        for (int i = 1; i <= 6; i++) {
-            assertTrue(rollCounts.get(i) > 0, "Number " + i + " should have been rolled at least once.");
-        }
+        double EXPECTED_AVERAGE = NUMBER_OF_ROLLS / 6.0;
+        double TOLERANCE = EXPECTED_AVERAGE * 0.10; // 10% tolerance
 
+        // Check that all numbers 1 to 6 are rolled within the acceptable range
+        int NUM_SIDES = 6;
+        for (int i = 1; i <= NUM_SIDES; i++) {
+            int count = rollCounts.get(i);
+            assertTrue(Math.abs(count - EXPECTED_AVERAGE) <= TOLERANCE,
+                    "Number " + i + " was rolled " + count + " times, which is outside the acceptable range.");
+        }
     }
 }
