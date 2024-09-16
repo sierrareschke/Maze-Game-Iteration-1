@@ -1,9 +1,12 @@
 package csci.ooad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room {
 
     private String name;
-    private Character [] occupants;
+    private List<Character> occupants;
     private int index;
 
 
@@ -12,7 +15,7 @@ public class Room {
      */
     public Room() {
         this.name = "";
-        this.occupants = new Character[0]; // Initializes with an empty array
+        this.occupants = new ArrayList<>(); // Initializes with an empty array
         this.index = -1;//
     }
 
@@ -24,7 +27,7 @@ public class Room {
      */
     public Room(String name){
         this.name = name;
-        this.occupants = new Character[0]; // Initializes with an empty a
+        this.occupants = new ArrayList<>(); // Initializes with an empty a
         this.index = -1;
     }
 
@@ -35,32 +38,23 @@ public class Room {
      */
     public Room(String name,int index) {
         this.name = name;
-        this.occupants = new Character[0]; // Initialize with an empty array
+        this.occupants = new ArrayList<>(); // Initialize with an empty array
         this.index = index;
     }
 
-    /**
-     * Accessor method to get the name of the Room
-     * @return name of Room
-     */
+    // ------------------ METHODS ------------------
+
+
     public String getName() {
         return name;
     }
 
-    /**
-     * Accessor method to get the Room's index
-     * @return index of Room
-     */
     public int getIndex() {return index;}
 
-
-    /**
-     * Getter method for Room's occupants
-     * @return array of the Characters in the room
-     */
-    public Character[] getOccupants() {
+    public List<Character> getOccupants() {
         return occupants;
     }
+
 
 
     /**
@@ -68,19 +62,7 @@ public class Room {
      * @param occupant - Character object to add to the room
      */
     public void addOccupant(Character occupant) {
-        // Create a new array with one more space than the current occupants array
-        Character[] newOccupants = new Character[occupants.length + 1];
-
-        // Copy existing occupants to the new array
-        for (int i = 0; i < occupants.length; i++) {
-            newOccupants[i] = occupants[i];
-        }
-
-        // Add the new occupant to the last position of the new array
-        newOccupants[occupants.length] = occupant;
-
-        // Update the occupants array
-        this.occupants = newOccupants;
+        occupants.add(occupant);
     }
 
 
@@ -90,7 +72,7 @@ public class Room {
      * @return the Adventurer that was removed
      */
     public Adventurer removeAdventurer(Adventurer occupant) {
-        // Check if the occupant is in the room by checking list of occupants
+        // Check if the occupant is in the room
         boolean found = false;
         for (Character character : occupants) {
             if (character instanceof Adventurer && character.equals(occupant)) {
@@ -103,23 +85,19 @@ public class Room {
             return null; // Adventurer not found
         }
 
-        // Create a new array with one less space than the current occupants array
-        Character[] newOccupants = new Character[occupants.length - 1];
-        int index = 0;
-
-        // Copy all occupants except the adventurer to the new array
-        for (Character character : occupants) {
-            if (!(character instanceof Adventurer && character.equals(occupant))) {
-                newOccupants[index++] = character;
-            }
-        }
-
-        // Update the occupants array
-        this.occupants = newOccupants;
+        // Remove the adventurer from the list of occupants
+        occupants.remove(occupant);
 
         // Return the removed adventurer
         return occupant;
     }
+
+
+    public void emptyRoom() {
+        occupants.clear();
+    }
+
+
 
     /**
      * toString method of the Room to print out its occupants
@@ -133,7 +111,7 @@ public class Room {
         String result = name + ":\n";
 
         // If the room is empty
-        if (occupants.length == 0) {
+        if (occupants.isEmpty()) {
             result += "No occupants are here.";
         } else {
             // Add information about each occupant

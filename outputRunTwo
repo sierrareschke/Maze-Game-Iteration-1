@@ -1,0 +1,120 @@
+6:54:26 PM: Executing ':csci.ooad.Main.main()'...
+
+> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+
+> Task :csci.ooad.Main.main()
+Starting the game...
+Enter adventurer's name: Sierra
+Adventurer's name is: Sierra
+Randomly selected creature: Werewolf
+Created adventurer: Sierra(health: 5.0)
+Created creature: Werewolf(health: 5.0)
+Adventurer placed in: Southeast
+Creature placed in: Northwest
+
+Initial game state:
+
+Northwest:
+Creature Werewolf(health: 5.0) is here. 
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Sierra(health: 5.0) is here. 
+Southwest:
+No occupants are here.
+
+Game is ready. Adventurer and creature are placed in rooms.
+Starting turns.
+
+Polymorphia MAZE: turn 1
+Northwest:
+Creature Werewolf(health: 5.0) is here. 
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Sierra(health: 5.0) is here. 
+Southwest:
+No occupants are here.
+Adventurer and creature are not in same room. Adventurer moves rooms and loses 0.25 health.
+
+Adventurer moved to Northeast.
+
+Polymorphia MAZE: turn 2
+Northwest:
+Creature Werewolf(health: 5.0) is here. 
+Northeast:
+Adventurer Sierra(health: 4.75) is here. 
+Southeast:
+No occupants are here.
+Southwest:
+No occupants are here.
+Adventurer and creature are not in same room. Adventurer moves rooms and loses 0.25 health.
+
+Adventurer moved to Northwest.
+
+Polymorphia MAZE: turn 3
+Northwest:
+Creature Werewolf(health: 5.0) is here. Adventurer Sierra(health: 4.5) is here. 
+Northeast:
+No occupants are here.
+Southeast:
+No occupants are here.
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 4
+Creature rolls: 6
+Creature wins the round. Adventurer takes 2 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 2.0
+Creature: 4.5
+
+Polymorphia MAZE: turn 4
+Northwest:
+Creature Werewolf(health: 4.5) is here. Adventurer Sierra(health: 2.0) is here. 
+Northeast:
+No occupants are here.
+Southeast:
+No occupants are here.
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 5
+Creature rolls: 2
+Adventurer wins the round. Creature takes 3 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 1.5
+Creature: 1.0
+
+Polymorphia MAZE: turn 5
+Northwest:
+Creature Werewolf(health: 1.0) is here. Adventurer Sierra(health: 1.5) is here. 
+Northeast:
+No occupants are here.
+Southeast:
+No occupants are here.
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 6
+Creature rolls: 3
+Adventurer wins the round. Creature takes 3 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 1.0
+Creature: -2.5
+Adventurer Sierra has defeated the creature! Game over
+Exited beginGame method.
+
+
+BUILD SUCCESSFUL in 5s
+2 actionable tasks: 1 executed, 1 up-to-date
+6:54:31 PM: Execution finished ':csci.ooad.Main.main()'.
+

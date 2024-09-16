@@ -1,0 +1,127 @@
+> Task :csci.ooad.Main.main()
+Starting the game...
+Enter adventurer's name: Grace
+Adventurer's name is: Grace
+Randomly selected creature: Gnome
+Created adventurer: Grace(health: 5.0)
+Created creature: Gnome(health: 5.0)
+Adventurer placed in: Southeast
+Creature placed in: Southeast
+
+Initial game state:
+
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 5.0) is here. Creature Gnome(health: 5.0) is here. 
+Southwest:
+No occupants are here.
+
+Game is ready. Adventurer and creature are placed in rooms.
+Starting turns.
+
+Polymorphia MAZE: turn 1
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 5.0) is here. Creature Gnome(health: 5.0) is here. 
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 5
+Creature rolls: 4
+Adventurer wins the round. Creature takes 1 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 4.5
+Creature: 3.5
+
+Polymorphia MAZE: turn 2
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 4.5) is here. Creature Gnome(health: 3.5) is here. 
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 4
+Creature rolls: 3
+Adventurer wins the round. Creature takes 1 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 4.0
+Creature: 2.0
+
+Polymorphia MAZE: turn 3
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 4.0) is here. Creature Gnome(health: 2.0) is here. 
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 6
+Creature rolls: 6
+Fight is a tie!
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 3.5
+Creature: 1.5
+
+Polymorphia MAZE: turn 4
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 3.5) is here. Creature Gnome(health: 1.5) is here. 
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 1
+Creature rolls: 3
+Creature wins the round. Adventurer takes 2 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: 1.0
+Creature: 1.0
+
+Polymorphia MAZE: turn 5
+Northwest:
+No occupants are here.
+Northeast:
+No occupants are here.
+Southeast:
+Adventurer Grace(health: 1.0) is here. Creature Gnome(health: 1.0) is here. 
+Southwest:
+No occupants are here.
+The adventurer and the creature are in the same room! A fight breaks out!
+
+Adventurer rolls: 1
+Creature rolls: 3
+Creature wins the round. Adventurer takes 2 damage.
+Both players lose 0.5 health after fight.
+Health status after fight: 
+Adventurer: -1.5
+Creature: 0.5
+Boo, the creature won. Game over.
+
+Exited beginGame method.
+
+
+BUILD SUCCESSFUL in 6s
+2 actionable tasks: 2 executed
+6:52:43 PM: Execution finished ':csci.ooad.Main.main()'.
+

@@ -1,5 +1,6 @@
 package csci.ooad;
 
+
 public class Character {
 
     private String name;

@@ -18,4 +18,5 @@ public class Dice {
     public int rollDice() {
         return random.nextInt(6) + 1; // Generates a number between 1 and 6
     }
+
 }

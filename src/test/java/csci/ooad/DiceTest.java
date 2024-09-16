@@ -25,7 +25,7 @@ public class DiceTest {
         }
 
         // roll the dice 1000 times
-        int NUMBER_OF_ROLLS = 1000;
+        int NUMBER_OF_ROLLS = 10000;
         for (int i = 0; i < NUMBER_OF_ROLLS; i++) {
             int rollResult = dice.rollDice();
             // update the HashMap to increment the count for the rolled integer
