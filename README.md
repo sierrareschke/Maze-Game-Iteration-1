@@ -137,38 +137,4 @@ in this format:
 One test is given for you, though it does not compile. It defines
 the top-level class (Polymorphia) and two methods that must be implemented to get the test to pass. 
 You are free to change the constructor call, but the other two lines should be left unchanged. 
-This test will be how you'll run the game. There is no need for a *main* method. For right now and 
-in the next few homeworks, we'll be running this game from tests only.
-
-# Submission and Grading
-The submission will be a URL to the GitHub repository. The repository should contain well-structured OO Java 
-code for the Polymorphia simulation, the two captured text files with the program results requested, 
-and a README file that has the names of the team members, the Java version, 
-and any other comments on the work – including documenting any assumptions or interpretations of the problem. 
-Only one URL submission is required per team.
-
-## Rubric
-- 5 points for the README file: A README file with names of the team members, the Java version, and any other comments about your implementation or assumptions should be present in the GitHub repo.  
-- 15 points for readable OO style code: Code should be commented if necessary, but self-documenting names are preferred.  Include citations (URLs) of any code from external sources. Concentrate on writing cohesive code with minimal coupling.
-- 15 points for correctly structured output: Submit the output generated from running your game. Indicate which test was run to produce this output.
-- 15 points for the required tests. If possible (easy, if you use IntelliJ) include a screenshot of your code coverage. It should look something like this:
-
-## Github Guidelines
-All code submissions for this course will be managed through GitHub Classroom. Kindly generate the GitHub repository for Homework 2 by following this link: [https://classroom.github.com/a/oDfMNF9D](https://classroom.github.com/a/oDfMNF9D)
-
-Since Homework 2 is a team assignment, only one repository submission is required per team. Hence, please do the following:
-
-* TEAM-MEMBER-1 generates the repository.
-* TEAM-MEMBER-1 adds TEAM-MEMBER-2 as a collaborator with write permissions.
-
-Either of the two submits the repository link in Canvas.
-Please do not make the repositories public since this violates the Honor Code.
-Please note that repositories not established using the GitHub Classroom link will not be considered valid for submission. 
-Please contact the class staff if you encounter technical difficulties or have questions about the setup process.
-
-## Overall Project Guidelines
-Assignments will be accepted late for one day only with a penalty of 10% for each day. 
-After two days, assignments will be given a 0 and will not be graded.
-
-Use office hours, e-mail, or Piazza to reach the class staff regarding homework/project questions or if you have issues completing the assignment.
-
+This test will be how you'll run the game. There is no need for a *main* method. For right now, we'll be running this game from tests only.
