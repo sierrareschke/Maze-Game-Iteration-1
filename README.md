@@ -1,10 +1,5 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/oDfMNF9D)
-# CSCI 4448/5448 - Fall 2024 - Homework 2
-
-**Value: 50 Points**
-
-The purpose of this homework is to start our adventure game, which we will use as a vehicle for 
-the entire semester. Our game will start simple and become more and more sophisticated. Here, we 
+This is the first iteration of the adventure game, which will be used as a vehicle for 
+the entire project. The game will start simple and become more and more sophisticated. Here, we 
 are concentrating on OO design, learning Java, and getting into the rhythm of developing code as
 a team in a Test-Driven manner. 
 
