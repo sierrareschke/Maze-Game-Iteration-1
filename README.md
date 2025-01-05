@@ -1,3 +1,5 @@
+##  Starting Polymorphia, Inheritance, Single-responsibility, Encapsulation
+
 This is the first iteration of the adventure game, which will be used as a vehicle for 
 the entire project. The game will start simple and become more and more sophisticated. Here, we 
 are concentrating on OO design, learning Java, and getting into the rhythm of developing code as
